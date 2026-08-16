@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-83d68ea2-b13d-468d-bf8d-c446c9904375/styles.css">
+<script src="_ds/organic-83d68ea2-b13d-468d-bf8d-c446c9904375/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap">
+<style>
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: 'Zen Maru Gothic', var(--font-body); text-wrap: pretty; }
+a { color: var(--color-accent-700); }
+a:hover { color: var(--color-accent-600); }
+h1,h2,h3,h4 { font-family: 'Zen Maru Gothic', var(--font-heading); font-weight: 500; }
+</style>
+</helmet>
+<nav class="nav">
+  <a href="index.dc.html" class="nav-brand" style="font-family: 'Zen Maru Gothic', var(--font-heading); text-decoration: none; color: var(--color-text);">マヤンエッセンス</a>
+  <a href="index.dc.html#monshou" style="text-decoration: none; color: var(--color-text); white-space: nowrap;">20の紋章</a>
+  <a href="index.dc.html#shindan" style="text-decoration: none; color: var(--color-text); white-space: nowrap;">紋章診断</a>
+  <a href="index.dc.html#faq" style="text-decoration: none; color: var(--color-text); white-space: nowrap;">よくある質問</a>
+  <a href="toriatsukai.dc.html" style="text-decoration: none; color: var(--color-text); white-space: nowrap;">お取り扱い</a>
+</nav>
+<div style="max-width: 880px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px);">
+
+  <section style="padding: 84px 0 48px;">
+    <span style="display: block; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 20px;">Videos</span>
+    <h1 style="font-size: clamp(32px, 4.6vw, 50px); line-height: 1.35; margin: 0; font-weight: 500;">動画で聴く、マヤ暦とエッセンス</h1>
+    <p style="font-size: 15.5px; line-height: 2.1; max-width: 40em; margin: 24px 0 0; color: color-mix(in srgb, var(--color-text) 80%, transparent);">マヤ暦のこと、紋章のこと、エッセンスの使い方のこと。動画でゆっくりお話ししています。</p>
+  </section>
+
+
+  <section style="padding: 56px 0 72px; display: grid; gap: var(--space-5);">
+    <sc-for list="{{ videos }}" as="v" hint-placeholder-count="3">
+      <div class="card" style="display: grid; grid-template-columns: minmax(200px, 320px) 1fr; gap: var(--space-5); align-items: center;">
+        <a href="{{ v.url }}" target="_blank" rel="noopener" style="display: block; aspect-ratio: 16 / 9; background: var(--color-neutral-200); border-radius: var(--radius-md); position: relative; text-decoration: none;">
+          <span style="position: absolute; inset: 0; display: grid; place-items: center; color: var(--color-accent); font-size: 40px;">▶</span>
+        </a>
+        <div>
+          <span style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-700);">{{ v.tag }}</span>
+          <h2 style="font-size: 21px; line-height: 1.5; margin: 8px 0 0;">{{ v.title }}</h2>
+          <p style="font-size: 14px; line-height: 1.9; margin: 10px 0 0; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ v.desc }}</p>
+        </div>
+      </div>
+    </sc-for>
+    <p style="font-size: 13.5px; line-height: 2; margin: 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">※ 動画のURL（YouTubeなど）をいただければ、こちらにサムネイル付きで埋め込みます。</p>
+  </section>
+
+  <footer style="padding: 40px 0 56px; font-size: 13px; line-height: 2; color: color-mix(in srgb, var(--color-text) 65%, transparent);">
+    マヤンエッセンス — <a href="https://hananoshizuku.jp/" target="_blank" rel="noopener">花のしずく</a>のフラワーエッセンスブレンド
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { videos: [
+      { tag: "はじめに", title: "マヤ暦とは？ — 260日の暦のはなし", desc: "ツォルキン、20の紋章と13の音。マヤ暦のいちばん最初のお話です。（動画URL差し替え待ち）", url: "#" },
+      { tag: "エッセンス", title: "マヤンエッセンスの使い方", desc: "選び方、とり方、続け方。はじめての方向けにお話ししています。（動画URL差し替え待ち）", url: "#" },
+      { tag: "紋章解説", title: "20の紋章を、ひとつずつ", desc: "赤い龍から黄色い太陽まで、紋章ごとの解説シリーズです。（動画URL差し替え待ち）", url: "#" },
+    ] };
+  }
+}
+</script>
+</body>
+</html>
